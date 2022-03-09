@@ -100,6 +100,6 @@ const createFile = (count) => {
   }
 };
 
-for (let i = 0; i <= 2; i++) {
-  createFile(i);
+for (let iteration = 0; iteration <= 2; iteration++) {
+  createFile(iteration);
 }
