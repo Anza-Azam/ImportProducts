@@ -1,0 +1,22 @@
+{
+  "name": "importproducts",
+  "version": "1.0.0",
+  "description": "Node Script to import product details ## Instructions ## Notes ## Improvements ## What's Next",
+  "main": "importProducts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anza-Azam/ImportProducts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anza-Azam/ImportProducts/issues"
+  },
+  "homepage": "https://github.com/Anza-Azam/ImportProducts#readme",
+  "dependencies": {
+    "csv-parser": "^3.0.0"
+  }
+}
