@@ -51,7 +51,7 @@ const createFile = (count) => {
 
         if (count !== 0) {
           console.log("******************************************************");
-          const fs = require("fs");
+         
 
           let rawdata = fs.readFileSync("output.json");
           let products = JSON.parse(rawdata);
