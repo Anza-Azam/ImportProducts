@@ -1,11 +1,11 @@
 const express = require("express");
 const app = express();
-const prod = require("./output.json");
+const products = require("./output.json");
 
-app.get("/", function (req, res) {
-  let category = prod.filter(
-    (ele) =>
-      ele.Colour === req.query.category || ele.Size === req.query.category
+app.get("/products", function (req, res) {
+  let category = products.filter(
+    (product) =>
+      product.Colour === req.query.category || product.Size === req.query.category
   );
   res.json(category);
 });
