@@ -10,6 +10,6 @@ app.get("/products", function (req, res) {
   res.json(category);
 });
 
-app.listen(5000, function () {
+app.listen(9000, function () {
   console.log("Server is listening on port 5000. Ready to accept requests!");
 });

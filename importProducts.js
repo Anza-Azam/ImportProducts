@@ -20,11 +20,11 @@ const createFile = (count) => {
           let json = JSON.stringify(arrayOfProducts);
           fs.writeFileSync("output.json", json);
 
-          let allPrimaryKeys = arrayOfProducts.map((ele, index) => {
-            return ele["SKU"];
+          let allPrimaryKeys = arrayOfProducts.map((product, index) => {
+            return product["SKU"];
           });
           let duplicateRecords = allPrimaryKeys.filter(
-            (ele, index) => allPrimaryKeys.indexOf(ele) !== index
+            (product, index) => allPrimaryKeys.indexOf(product) !== index
           );
 
           console.log(
@@ -35,7 +35,7 @@ const createFile = (count) => {
             Number of products created ${
               arrayOfProducts[arrayOfProducts.length - 1]["SKU"] -
               (arrayOfProducts.filter(
-                (ele) => ele["Colour"] === "" || ele["Size"] === ""
+                (product) => product["Colour"] === "" || product["Size"] === ""
               ).length +
                 duplicateRecords.length)
             }
@@ -43,7 +43,7 @@ const createFile = (count) => {
             Number of products unchanged 0          
             Number of rows skipped ${
               arrayOfProducts.filter(
-                (ele) => ele["Colour"] === "" || ele["Size"] === ""
+                (product) => product["Colour"] === "" || product["Size"] === ""
               ).length + duplicateRecords.length
             }`
           );
@@ -56,28 +56,28 @@ const createFile = (count) => {
           let rawdata = fs.readFileSync("output.json");
           let products = JSON.parse(rawdata);
 
-          let allPrimaryKeys = products.map((ele, index) => {
-            return ele["SKU"];
+          let allPrimaryKeys = products.map((product, index) => {
+            return product["SKU"];
           });
           let duplicateRecords = allPrimaryKeys.filter(
-            (ele, index) => allPrimaryKeys.indexOf(ele) !== index
+            (product, index) => allPrimaryKeys.indexOf(product) !== index
           );
 
-          // console.log(b);
           console.log(
-              `
+            `
             Number of rows imported ${
               products[products.length - 1]["SKU"]
             }         
             Number of products created ${
               products[products.length - 1]["SKU"] -
               (products.filter(
-                (ele) => ele["Colour"] === "" || ele["Size"] === ""
+                (product) => product["Colour"] === "" || product["Size"] === ""
               ).length +
                 duplicateRecords.length) -
               (arrayOfProducts[arrayOfProducts.length - 1]["SKU"] -
                 (arrayOfProducts.filter(
-                  (ele) => ele["Colour"] === "" || ele["Size"] === ""
+                  (product) =>
+                    product["Colour"] === "" || product["Size"] === ""
                 ).length +
                   duplicateRecords.length))
             }
@@ -85,13 +85,13 @@ const createFile = (count) => {
             Number of products unchanged ${
               products[products.length - 1]["SKU"] -
               (products.filter(
-                (ele) => ele["Colour"] === "" || ele["Size"] === ""
+                (product) => product["Colour"] === "" || product["Size"] === ""
               ).length +
                 duplicateRecords.length)
             }
             Number of rows skipped ${
               arrayOfProducts.filter(
-                (ele) => ele["Colour"] === "" || ele["Size"] === ""
+                (product) => product["Colour"] === "" || product["Size"] === ""
               ).length + duplicateRecords.length
             }`
           );
