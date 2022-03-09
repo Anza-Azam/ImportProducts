@@ -28,19 +28,20 @@ const createFile = (count) => {
           );
 
           console.log(
-            `Number of rows imported ${
+            ` 
+            Number of rows imported ${
               arrayOfProducts[arrayOfProducts.length - 1]["SKU"]
             }
-Number of products created ${
+            Number of products created ${
               arrayOfProducts[arrayOfProducts.length - 1]["SKU"] -
               (arrayOfProducts.filter(
                 (ele) => ele["Colour"] === "" || ele["Size"] === ""
               ).length +
                 duplicateRecords.length)
             }
-Number of products updated 0
-Number of products unchanged 0          
-Number of rows skipped ${
+            Number of products updated 0
+            Number of products unchanged 0          
+            Number of rows skipped ${
               arrayOfProducts.filter(
                 (ele) => ele["Colour"] === "" || ele["Size"] === ""
               ).length + duplicateRecords.length
@@ -49,7 +50,7 @@ Number of rows skipped ${
         }
 
         if (count !== 0) {
-          console.log("***************");
+          console.log("******************************************************");
           const fs = require("fs");
 
           let rawdata = fs.readFileSync("output.json");
@@ -64,10 +65,11 @@ Number of rows skipped ${
 
           // console.log(b);
           console.log(
-            `number of rows imported ${
+              `
+            Number of rows imported ${
               products[products.length - 1]["SKU"]
             }         
-number of products created ${
+            Number of products created ${
               products[products.length - 1]["SKU"] -
               (products.filter(
                 (ele) => ele["Colour"] === "" || ele["Size"] === ""
@@ -79,15 +81,15 @@ number of products created ${
                 ).length +
                   duplicateRecords.length))
             }
-Number of products updated 0
-Number of products unchanged ${
+            Number of products updated 0
+            Number of products unchanged ${
               products[products.length - 1]["SKU"] -
               (products.filter(
                 (ele) => ele["Colour"] === "" || ele["Size"] === ""
               ).length +
                 duplicateRecords.length)
             }
-Number of rows skipped ${
+            Number of rows skipped ${
               arrayOfProducts.filter(
                 (ele) => ele["Colour"] === "" || ele["Size"] === ""
               ).length + duplicateRecords.length
